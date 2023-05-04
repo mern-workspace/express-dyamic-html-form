@@ -32,6 +32,27 @@ router.get('/:id',(request,response)=>{
 const services = [
     {
         name : 'Web Development'
+    },
+    {
+        name : "Cyber Security Service"
+    },
+    {
+        name : "Mobile App Development Service"
+    },
+    {
+        name: "Digital Marketing Service"
+    },
+    {
+        name: "Firewall Service"
+    },
+    {
+        name: "CloudBackup Service"
+    },
+    {
+        name : "Networking Service"
+    },
+    {
+        name : "SaaS"
     }
 ]
 
