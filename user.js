@@ -22,7 +22,7 @@ router.post('/',(request,response)=>{
     isAValidValue = true
     if(isAValidValue)
     {
-        services.push({name:request.body.serviceName})
+        services.push({name:request.body.serviceName,cost:request.body.serviceCost,duration:request.body.serviceDuration})
         response.redirect(`/user/${services.length - 1}`)
     }
     else
@@ -35,33 +35,51 @@ router.post('/',(request,response)=>{
 })
 
 router.get('/:id([0-9]{1,2})',(request,response)=>{
-    response.send(`Service Name Added with Id : ${request.params.id}`)
+    // response.send(`Service Name Added with Id : ${request.params.id}`)
+    // response.json(request.user)
+    response.send(`Service Name : ${request.user.name} , Service Cost : ${request.user.cost} , Service Duration : ${request.user.duration} `)
 })
 
 const services = [
     {
-        name : 'Web Development'
+        'name' : 'Web Development',
+        'cost' : 25000,
+        'duration' : 40     // DAYS   
     },
     {
-        name : "Cyber Security Service"
+        'name' : "Cyber Security Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name : "Mobile App Development Service"
+        'name' : "Mobile App Development Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name: "Digital Marketing Service"
+        'name': "Digital Marketing Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name: "Firewall Service"
+        'name': "Firewall Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name: "CloudBackup Service"
+        'name': "CloudBackup Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name : "Networking Service"
+        'name' : "Networking Service",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     },
     {
-        name : "SaaS"
+        'name' : "SaaS",
+        'cost' : 25000,
+        'duration' : 40     // DAYS 
     }
 ]
 

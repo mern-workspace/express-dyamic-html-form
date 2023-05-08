@@ -9,7 +9,21 @@
 <body>
     <form action="/user" method="post">
         <label for="serviceName">Service Name</label>
-        <input type="text" id="serviceName" name="serviceName" >
+        <input type="text" id="serviceName" name="serviceName" > <br>
+
+        <label for="serviceCost">Service Cost</label>
+        <input type="text" id="serviceCost" name="serviceCost" pattern = "[0-9]{1,15}">  <br>
+
+        <label for="serviceDuration">Service Duration</label>
+        <input type="text" id="serviceDuration" name="serviceDuration" pattern = "[0-9]{1,15}"> 
+        
+        <select name="typeOfDuration" id="typeOfDuration">
+            <option value="Days">Days</option>
+            <option value="Month">Month</option>
+            <option value="Year">Year</option>
+
+        </select>
+        <br>
 
         <button type="submit">Submit</button>
     </form>
