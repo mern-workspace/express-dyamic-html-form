@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 const userPage = require('./user')
+var bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
 
 // for static web page
 // app.use(express.static('public'))
@@ -8,13 +11,15 @@ const userPage = require('./user')
 // for dynamic web page
 app.set("view engine","ejs")
 
-app.use(express.urlencoded({extended : true}))
+app.use(bodyParser.urlencoded({extended : true}))
 
 app.get('/',(request,response)=>{
-    response.send(200)
+    // response.send(200)
 
     // render static web page
-    // response.render('index')
+
+
+    response.render('views/users/service.ejs')
 })
 
 app.use('/user',userPage)
